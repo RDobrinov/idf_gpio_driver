@@ -92,7 +92,7 @@ static gpio_drv_config_t _drv_config = (gpio_drv_config_t){false, 0LLU, 0LLU, &G
  
 void gpio_drv_init(void) {
     if(_drv_config._init_completed) return;
-    for(uint8_t gpio = GPIO_NUM_0; gpio < SOC_GPIO_PIN_COUNT; gpio++) {_drv_config._system_reserved |= (esp_gpio_is_pin_reserved(gpio)) ? BIT64(gpio) : 0LLU;}
+    for(uint8_t gpio = GPIO_NUM_0; gpio < SOC_GPIO_PIN_COUNT; gpio++) {_drv_config._system_reserved |= (esp_gpio_is_reserved(gpio)) ? BIT64(gpio) : 0LLU;}
     esp_chip_info_t *chip_info = (esp_chip_info_t *)malloc(sizeof(esp_chip_info_t));
     esp_chip_info(chip_info);
     #ifdef CONFIG_IDF_TARGET_ESP32C6

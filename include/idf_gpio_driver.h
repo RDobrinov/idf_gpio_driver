@@ -27,6 +27,7 @@
 #include "driver/rtc_io.h"
 #include "esp_bit_defs.h"
 #include "hal/gpio_hal.h"
+#include "hal/misc.h"
 #include "soc/rtc_io_channel.h"
 #include "soc/rtc_io_periph.h"
 #include "soc/rtc_io_struct.h"
